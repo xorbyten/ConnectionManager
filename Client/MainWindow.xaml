@@ -1,0 +1,27 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client.Classes"
+        mc:Ignorable="d"
+        Title="Client" Height="550" Width="465">
+
+    <Window.Resources>
+        
+    </Window.Resources>
+
+    <StackPanel VerticalAlignment="Stretch">
+        <ListBox x:Name="lb_Users" ItemsSource="{Binding Path=users}">
+            <ListBox.ItemTemplate> 
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Source=".\Images\user.png" />
+                        <Label Content="{Binding Hostname}" />
+                        <Label Content="{Binding IP}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</Window>

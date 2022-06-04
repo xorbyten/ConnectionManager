@@ -1,0 +1,27 @@
+﻿<Window x:Class="ConnectionManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConnectionManager"
+        mc:Ignorable="d"
+        Title="ConnectionManager" Height="450" Width="800" ResizeMode="CanMinimize">
+    
+    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Label FontSize="32" Content="Connection Manager" HorizontalAlignment="Center" Height="70"/>
+        <Label Content="{Binding Hostname}" FontSize="14" HorizontalAlignment="Center"></Label>
+        <Label Content="{Binding HostIp}" FontSize="14" HorizontalAlignment="Center"></Label>
+        <ScrollViewer Height="342">
+            <ListBox Name="lbl_Users" ItemsSource="{Binding users}" Height="342">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel Orientation="Horizontal">
+                            <Label Content="{Binding Hostname}"/>
+                            <Label Margin="555, 0, 0, 0" Content="{Binding IP}"/>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+    </StackPanel>
+</Window>
